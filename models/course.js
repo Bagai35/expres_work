@@ -1,19 +1,17 @@
-const { v4:uuid } = require('uuid')
-const fs = require('fs')
-const path = require('path')
-const { response } = require('express')
+const {v4: uuid} = require('uuid');
+const fs = require('fs');
+const path = require('path');
 
 class Course {
-    constructor(title, price, img){
-        this.title = title
-        this.price = price
-        this.img = img
+    constructor(title, price, img) {
+        this.title = title;
+        this.price = price;
+        this.img = img;
         this.id = uuid()
-
     }
 
     toJSON() {
-        return{
+        return {
             title: this.title,
             price: this.price,
             img: this.img,
@@ -21,7 +19,7 @@ class Course {
         }
     }
 
-    async save(){
+    async save() {
         const courses = await Course.getAll()
         courses.push(this.toJSON())
 
@@ -30,24 +28,25 @@ class Course {
                 path.join(__dirname, '..', 'data', 'courses.json'),
                 JSON.stringify(courses),
                 (err) => {
-                    if (err){
+                    if (err) {
                         reject(err)
-                    }else{
+                    } else {
                         resolve()
                     }
                 }
             )
         })
     }
-    static getAll(){
+
+    static getAll() {
         return new Promise((resolve, reject) => {
             fs.readFile(
                 path.join(__dirname, '..', 'data', 'courses.json'),
-                'utf-8',
+                'utf8',
                 (err, content) => {
-                    if (err){
+                    if (err) {
                         reject(err)
-                    }else{
+                    } else {
                         resolve(JSON.parse(content))
                     }
                 }
