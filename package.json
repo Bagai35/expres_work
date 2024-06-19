@@ -16,16 +16,17 @@
     "@handlebars/allow-prototype-access": "^1.0.5",
     "express": "^4.17.17",
     "express-handlebars": "^6.0.1",
+    "mongodb": "^6.7.0",
     "mongoose": "^6.1.5",
     "uuid": "^8.3.2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NikitaSkorohodov/expressProject.git"
+    "url": "git+https://github.com/Bagai35/expres_work"
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/NikitaSkorohodov/expressProject/issues"
+    "url": "https://github.com/Bagai35/expres_work/issues"
   },
-  "homepage": "https://github.com/NikitaSkorohodov/expressProject#readme"
+  "homepage": "https://github.com/Bagai35/expres_work#readme"
 }
